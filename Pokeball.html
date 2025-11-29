@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced CSS Great Ball</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            font-family: sans-serif;
+            overflow: hidden; /* Prevent scrollbars if ball is too big */
+        }
+
+        .greatball {
+            /* Main container: The ball itself */
+            width: 400px; /* **BIGGER SIZE** */
+            height: 400px; /* **BIGGER SIZE** */
+            position: relative;
+            border-radius: 50%;
+            overflow: hidden; 
+            border: 10px solid black; /* Thicker outer border */
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); /* More prominent shadow */
+        }
+
+        .top-half {
+            /* The blue, glossy top section */
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to bottom, #2a7aff 0%, #004d99 100%); /* Adjusted blue gradient for more depth */
+            border-bottom: 5px solid black; /* Thicker dividing line */
+        }
+
+        .bottom-half {
+            /* The white, glossy bottom section */
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to top, #ffffff 0%, #e8e8e8 100%); /* Adjusted white gradient */
+        }
+
+        .center-button {
+            /* The main white button housing */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); 
+            width: 100px; /* **BIGGER BUTTON** */
+            height: 100px; /* **BIGGER BUTTON** */
+            background: #ffffff;
+            border: 8px solid black; /* Thicker button border */
+            border-radius: 50%;
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.3); /* More prominent inner shadow */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .inner-circle {
+            /* The small black circle inside the button */
+            width: 50px; /* **BIGGER INNER CIRCLE** */
+            height: 50px; /* **BIGGER INNER CIRCLE** */
+            background-color: black;
+            border-radius: 50%;
+        }
+
+        .accent {
+            /* The red corner accents - adjusted shape and position */
+            position: absolute;
+            width: 120px; /* **Wider accent** */
+            height: 40px; /* **Taller accent** */
+            background: linear-gradient(to right, #e60000 0%, #a30000 100%); /* Red gradient */
+            border: 3px solid black;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 5px; /* Slightly rounded corners */
+            z-index: 1; /* Ensure accents are above the blue half but below the button */
+        }
+
+        .accent-left {
+            /* Position and rotation for the left accent */
+            top: 60px; /* Adjusted top position */
+            left: 50px; /* Adjusted left position */
+            transform: rotate(-45deg); 
+            transform-origin: 0% 100%; /* Rotate from bottom-left corner */
+        }
+
+        .accent-right {
+            /* Position and rotation for the right accent */
+            top: 60px; /* Adjusted top position */
+            right: 50px; /* Adjusted right position */
+            transform: rotate(45deg); 
+            transform-origin: 100% 100%; /* Rotate from bottom-right corner */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="greatball">
+        <div class="top-half"></div>
+        <div class="bottom-half"></div>
+        <div class="center-button">
+            <div class="inner-circle"></div>
+        </div>
+        
+        <div class="accent accent-left"></div>
+        <div class="accent accent-right"></div>
+    </div>
+
+</body>
+</html>
